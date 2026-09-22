@@ -75,8 +75,22 @@
       </div>
     </div>
 
-    <div class="hero-figure" data-reveal-mask>
-      <img src="assets/img/hero-rodrigo.jpg" alt="Rodrigo Ocampo" fetchpriority="high" loading="eager" decoding="sync">
+    <div class="hero-figure hero-figure--code" data-reveal-mask aria-hidden="true">
+      <div class="code-mock">
+        <div class="code-mock-bar">
+          <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+          <span class="browser-url">index.html</span>
+        </div>
+        <div class="code-mock-body">
+          <p><span class="code-tag">&lt;section</span> <span class="code-attr">class</span>=<span class="code-str">"tienda"</span><span class="code-tag">&gt;</span></p>
+          <p class="code-indent"><span class="code-tag">&lt;h2&gt;</span>Tu marca<span class="code-tag">&lt;/h2&gt;</span></p>
+          <p class="code-indent"><span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-str">"carrito"</span><span class="code-tag">&gt;</span></p>
+          <p class="code-indent2"><span class="code-comment">// agregar al carrito</span></p>
+          <p class="code-indent2"><span class="code-attr">whatsapp</span>.<span class="code-fn">enviar</span>(pedido)</p>
+          <p class="code-indent"><span class="code-tag">&lt;/div&gt;</span></p>
+          <p><span class="code-tag">&lt;/section&gt;</span></p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -86,11 +100,7 @@
 <main>
 
   <section class="origin" id="como-trabajo">
-    <div class="container origin-grid">
-      <figure class="origin-figure">
-        <img src="assets/img/origen-mate.jpg" alt="Rodrigo trabajando" loading="lazy" decoding="async">
-      </figure>
-
+    <div class="container origin-grid origin-grid--full">
       <div class="origin-text">
         <p class="kicker" data-reveal>Cómo trabajo</p>
         <h2 class="section-title" data-split="words">Simple, rápido, sin vueltas</h2>
@@ -108,7 +118,7 @@
         </blockquote>
 
         <article data-reveal>
-          <p class="text-emphasis">Te muestro cómo queda antes de cobrarte un peso, con ejemplos reales — no plantillas de catálogo.</p>
+          <p class="text-emphasis">Te muestro cómo queda con ejemplos reales — no plantillas de catálogo genéricas.</p>
         </article>
 
         <a class="btn btn-outline" href="#hablemos" data-reveal>Contame tu proyecto</a>
