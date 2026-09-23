@@ -233,10 +233,26 @@
   }
 
   /* ---------- hero entrance (first-screen wow) ---------- */
+  /* Uses a CSS transition (not a JS/rAF-driven tween) so it can't get
+     stuck mid-animation if the tab loads without focus/visibility. */
   function initHeroEntrance() {
-    if (!window.gsap) return;
-    gsap.set(".hero-figure", { opacity: 0, y: 24 });
-    gsap.to(".hero-figure", { opacity: 1, y: 0, duration: 1.1, delay: 0.15, ease: "expo.out" });
+    var el = $(".hero-figure");
+    if (!el) return;
+    el.style.transition = "opacity 1.1s cubic-bezier(0.16,1,0.3,1) 0.15s, transform 1.1s cubic-bezier(0.16,1,0.3,1) 0.15s";
+    el.style.opacity = "0";
+    el.style.transform = "translateY(24px)";
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
+      });
+    });
+    // Safety net: if the transition never fires (backgrounded tab, etc.)
+    // force the final state so the hero figure is never stuck invisible.
+    setTimeout(function () {
+      el.style.opacity = "1";
+      el.style.transform = "translateY(0)";
+    }, 2500);
   }
 
   function boot() {
